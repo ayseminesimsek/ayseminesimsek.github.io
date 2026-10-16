@@ -6,15 +6,10 @@
 #  To link a PDF: url: "/documents/file-name.pdf"
 # ─────────────────────────────────────────────
 
-- title: "Personal website"
+- title: Project name
   year: "2026"
-  status: "Live"
-  description: "The site you are looking at: about, CV, blog, documents and links."
-  url: ""
-
-- title: "Project name"
-  year: "2026"
-  status: "In progress"
-  description: "Briefly describe a course project, a lab experiment or an internship report."
-  url: ""
+  status: In progress
+  description: Briefly describe a course project, a lab experiment or an internship report.
   draft: true
+- year: "2026"
+  status: In progress
