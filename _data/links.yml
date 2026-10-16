@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────
+#  LINKS — shown on the Links page, in groups
+#  New group: copy a "- group:" block.
+#  New link: copy a "- name: / url: / note:" set. "note" is optional.
+# ─────────────────────────────────────────────
+
+- group: "METU"
+  links:
+    - name: "Metallurgical and Materials Engineering"
+      url: "https://mete.metu.edu.tr/en"
+      note: "My department at METU"
+    - name: "RÜZGEM"
+      url: "https://ruzgem.metu.edu.tr/en"
+      note: "METU Center for Wind Energy"
+
+- group: "Materials data and references"
+  links:
+    - name: "MatWeb"
+      url: "https://www.matweb.com"
+      note: "Material property data sheets"
+    - name: "The Materials Project"
+      url: "https://next-gen.materialsproject.org"
+      note: "Computed properties of inorganic materials"
+    - name: "ASM International"
+      url: "https://www.asminternational.org"
+      note: "The materials information society"
+    - name: "DoITPoMS"
+      url: "https://www.doitpoms.ac.uk"
+      note: "Cambridge teaching resources for materials science"

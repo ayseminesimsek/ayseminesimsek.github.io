@@ -1,0 +1,75 @@
+<!doctype html>
+{%- assign p = site.data.profile -%}
+{%- if page.title and page.url != "/" -%}{%- assign full_title = page.title | append: " · " | append: p.name -%}{%- else -%}{%- assign full_title = p.name -%}{%- endif -%}
+{%- assign desc = page.summary | default: page.description | default: site.description -%}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ desc | strip_html | strip_newlines | escape }}">
+<meta name="author" content="{{ p.name }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}profile{% endif %}">
+<meta property="og:site_name" content="{{ p.name }}">
+<meta property="og:title" content="{{ full_title }}">
+<meta property="og:description" content="{{ desc | strip_html | strip_newlines | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{%- if p.photo != "" %}
+<meta property="og:image" content="{{ p.photo | absolute_url }}">
+{%- endif %}
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#262a32" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%239a3b26'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E">
+<script>
+try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+<link rel="preload" href="{{ '/assets/fonts/LM-regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+{%- if page.math %}
+<script>window.MathJax = { tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] } };</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{%- endif %}
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+  <aside class="id">
+    <div class="avatar">
+      {%- if p.photo != "" -%}
+      <img src="{{ p.photo | relative_url }}" alt="{{ p.name }}" width="120" height="120">
+      {%- else -%}
+      <span aria-hidden="true">{{ p.initials }}</span>
+      {%- endif -%}
+    </div>
+    <p class="name"><a href="{{ '/' | relative_url }}">{{ p.name }}</a></p>
+    <p class="tagline">{{ p.tagline }}</p>
+    <ul class="meta">{% for i in p.info %}<li>{{ i }}</li>{% endfor %}</ul>
+    <div class="links">{% for s in p.social %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }} ↗</a>{% endfor %}</div>
+  </aside>
+  <main id="content">
+    {%- assign section = page.section | default: "" -%}
+    <nav class="tabs" aria-label="Sections">
+      <a href="{{ '/' | relative_url }}"{% if section == "about" %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/blog/' | relative_url }}"{% if section == "blog" or page.layout == "post" %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if section == "projects" %} aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ '/documents/' | relative_url }}"{% if section == "documents" %} aria-current="page"{% endif %}>Documents</a>
+      <a href="{{ '/links/' | relative_url }}"{% if section == "links" %} aria-current="page"{% endif %}>Links</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if section == "contact" %} aria-current="page"{% endif %}>Contact</a>
+    </nav>
+    <div class="page">
+{{ content }}
+    </div>
+  </main>
+</div>
+<footer>
+  <span>© {{ site.time | date: "%Y" }} {{ p.name }}</span>
+  <span class="right">
+    <button class="btn" id="theme-btn" type="button">Theme: System</button>
+    <span>{{ site.url | remove: "https://" }}</span>
+  </span>
+</footer>
+<script src="{{ '/assets/site.js' | relative_url }}"></script>
+</body>
+</html>

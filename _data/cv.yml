@@ -1,0 +1,50 @@
+# ─────────────────────────────────────────────
+#  CV — the lower part of the home page
+#  Two kinds of sections:
+#    rows: date/label on the left, title and details on the right
+#    tags: small boxes side by side
+#  To add a section, copy a block and paste it below.
+# ─────────────────────────────────────────────
+
+- title: "Education"
+  rows:
+    - when: "2021 – 2027"
+      what: "Middle East Technical University (METU)"
+      details: "B.Sc. in Metallurgical and Materials Engineering · Ankara · Expected graduation 2027"
+    - when: "2017 – 2021"
+      what: "Osmaniye İstek Schools"
+      details: "High school"
+
+- title: "Experience"
+  rows:
+    - when: "Dec 2025 – May 2026"
+      what: "RÜZGEM — METU Center for Wind Energy"
+      details: "Student worker · Contributing to ongoing research and technical tasks within the wind energy center."
+    - when: "Aug 2025"
+      what: "EMUM — Center for Fabrication and Application of Electronic Materials, METU"
+      details: "Intern · Assisted in laboratory procedures and material characterization; worked on the synthesis and preparation of semiconductor materials."
+    - when: "Jul 2024"
+      what: "İSDEMİR"
+      details: "Intern · Observed the hot rolling process of steel billets and gained exposure to industrial-scale production and quality control."
+
+- title: "Interests"
+  tags:
+    - "Materials characterization"
+    - "Semiconductor materials"
+    - "Wind energy"
+    - "Steel production"
+
+- title: "Skills"
+  rows:
+    - when: "Software"
+      what: "Siemens NX, MS Office"
+    - when: "Languages"
+      what: "Turkish (native), English (B2)"
+
+- title: "Activities"
+  rows:
+    - when: "2024"
+      what: "METU Women's Billiards Team"
+      details: "Interuniversity Champions (First Place)"
+    - when: "Hobbies"
+      what: "Tennis, billiards"

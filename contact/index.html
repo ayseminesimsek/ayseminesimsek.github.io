@@ -1,0 +1,18 @@
+---
+layout: default
+title: Contact
+section: contact
+---
+{%- assign p = site.data.profile -%}
+<p class="eyebrow">Contact</p>
+<h1 class="h">Get in touch</h1>
+<div class="prose"><p>{{ p.contact_text }}</p></div>
+<div class="contact">
+{%- for c in p.contact %}
+  <div class="item">
+    <span class="label">{{ c.label }}</span>
+    <span class="value">{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.value }}</a>{% else %}{{ c.value }}{% endif %}</span>
+    {% if c.copy %}<button class="btn copy" type="button" data-v="{{ c.value }}">Copy</button>{% else %}<span></span>{% endif %}
+  </div>
+{%- endfor %}
+</div>

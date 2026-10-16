@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────
+#  PROFILE — the left column, the About text and the Contact page
+#  Tip: keep the indentation (spaces) as it is and keep text inside quotes.
+# ─────────────────────────────────────────────
+
+name: "Ayşe Mine Şimşek"
+short_name: "Ayşe Mine"
+initials: "AŞ"
+photo: "/assets/photo.jpg"     # To hide the photo: photo: ""
+tagline: "Metallurgical and Materials Engineering student at METU, interested in materials characterization and energy materials."
+
+# About text on the home page. Leave one empty line between paragraphs.
+# Keep the 2 spaces at the start of each line. You can use **bold**, *italic*, [link](address).
+about: |
+  I am a fourth-year Metallurgical and Materials Engineering student at Middle East Technical University (METU) in Ankara.
+
+  Through my internships I have seen materials from two very different scales: the hot rolling of steel billets on the production floor at İSDEMİR, and the synthesis and characterization of semiconductor materials in the laboratory at METU EMUM. I am currently a student worker at RÜZGEM, the METU Center for Wind Energy.
+
+  I am looking for further internship opportunities and for engineering projects where I can collaborate and gain practical experience. Outside the lab, I play on the METU Women's Billiards Team and enjoy tennis.
+
+info:
+  - "Ankara, Türkiye"
+  - "METU · Metallurgical and Materials Eng."
+
+# Social links in the left column
+social:
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/ayşe-mine-şimşek-7a78bb320"
+
+# Contact page
+contact_text: "Feel free to reach out about internships, projects or collaboration."
+contact:
+  - label: "Email"
+    value: "aysmin05@gmail.com"
+    copy: true
+  - label: "LinkedIn"
+    value: "ayşe-mine-şimşek-7a78bb320"
+    url: "https://www.linkedin.com/in/ayşe-mine-şimşek-7a78bb320"

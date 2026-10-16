@@ -1,0 +1,18 @@
+---
+layout: default
+title: Links
+section: links
+description: Websites and resources I find useful.
+---
+<p class="eyebrow">Links</p>
+<h1 class="h">Useful resources</h1>
+{%- for g in site.data.links %}
+<div class="doc-group">
+  <h2 class="cv-title">{{ g.group }}</h2>
+  <ul class="link-list">
+  {%- for l in g.links %}
+    <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name }} ↗</a>{% if l.note %}<span class="link-note">{{ l.note }}</span>{% endif %}</li>
+  {%- endfor %}
+  </ul>
+</div>
+{%- endfor %}

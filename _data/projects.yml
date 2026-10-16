@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────
+#  PROJECTS
+#  New project: copy the block below, paste it underneath and fill it in.
+#  Projects with draft: true are hidden on the site.
+#  Leave url empty ("") to hide the "View" link.
+#  To link a PDF: url: "/documents/file-name.pdf"
+# ─────────────────────────────────────────────
+
+- title: "Personal website"
+  year: "2026"
+  status: "Live"
+  description: "The site you are looking at: about, CV, blog, documents and links."
+  url: ""
+
+- title: "Project name"
+  year: "2026"
+  status: "In progress"
+  description: "Briefly describe a course project, a lab experiment or an internship report."
+  url: ""
+  draft: true

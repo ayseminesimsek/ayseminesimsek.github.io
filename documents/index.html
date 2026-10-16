@@ -1,0 +1,61 @@
+---
+layout: default
+title: Documents
+section: documents
+description: Lecture notes, reports and other documents.
+---
+{%- comment -%}
+  This page lists every file in the "documents" folder automatically,
+  including files inside sub-folders. Each sub-folder becomes a group
+  on the page, named after the folder.
+  Optional titles/descriptions/categories: _data/documents.yml
+{%- endcomment -%}
+{%- assign all = site.static_files | where_exp: "f", "f.path contains '/documents/'" | sort: "path" -%}
+{%- assign files = "" | split: "" -%}
+{%- for f in all -%}
+  {%- assign e = f.extname | downcase -%}
+  {%- unless e == ".html" or e == ".yml" -%}{%- assign files = files | push: f -%}{%- endunless -%}
+{%- endfor -%}
+<p class="eyebrow">Documents · {{ files.size }} {% if files.size == 1 %}file{% else %}files{% endif %}</p>
+<h1 class="h">Documents</h1>
+{%- if files.size == 0 %}
+<p class="empty">No documents yet.</p>
+{%- else %}
+{%- comment -%} Work out each file's group: category from _data/documents.yml, otherwise its sub-folder name {%- endcomment -%}
+{%- assign groups = "" | split: "" -%}
+{%- for f in files -%}
+  {%- assign meta = site.data.documents | where: "file", f.name | first -%}
+  {%- assign parts = f.path | remove_first: "/documents/" | split: "/" | pop -%}
+  {%- assign folder = parts | join: " / " -%}
+  {%- assign g = meta.category | default: folder | default: "General" -%}
+  {%- unless groups contains g -%}{%- assign groups = groups | push: g -%}{%- endunless -%}
+{%- endfor %}
+{%- assign groups = groups | sort -%}
+{%- if groups contains "General" -%}
+  {%- assign rest = groups | where_exp: "x", "x != 'General'" -%}
+  {%- assign groups = "General" | split: "|" | concat: rest -%}
+{%- endif -%}
+{%- for g in groups %}
+<div class="doc-group">
+  {% if groups.size > 1 %}<h2 class="cv-title">{{ g }}</h2>{% endif %}
+  <ul class="docs">
+  {%- for f in files -%}
+    {%- assign meta = site.data.documents | where: "file", f.name | first -%}
+    {%- assign parts = f.path | remove_first: "/documents/" | split: "/" | pop -%}
+    {%- assign folder = parts | join: " / " -%}
+    {%- assign fg = meta.category | default: folder | default: "General" -%}
+    {%- if fg == g %}
+    <li><a class="doc" href="{{ f.path | relative_url }}" target="_blank" rel="noopener">
+      <span class="doc-icon" aria-hidden="true">{{ f.extname | remove: "." | downcase }}</span>
+      <span class="doc-body">
+        <span class="doc-title">{% if meta.title %}{{ meta.title }}{% else %}{{ f.basename | replace: "-", " " | replace: "_", " " }}{% endif %}</span>
+        {% if meta.description %}<span class="doc-note">{{ meta.description }}</span>{% endif %}
+      </span>
+      <span class="doc-open">open ↗</span>
+    </a></li>
+    {%- endif -%}
+  {%- endfor %}
+  </ul>
+</div>
+{%- endfor %}
+{%- endif %}

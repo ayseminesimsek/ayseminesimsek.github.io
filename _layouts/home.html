@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<p class="eyebrow">About</p>
+<h1 class="h">Hello, I'm {{ site.data.profile.short_name }}.</h1>
+<div class="prose">
+{{ site.data.profile.about | markdownify }}
+</div>
+
+<div class="cv">
+{%- for b in site.data.cv %}
+  <div class="cv-block">
+    <h2 class="cv-title">{{ b.title }}</h2>
+    {%- if b.tags %}
+    <ul class="chips">{% for e in b.tags %}<li class="chip">{{ e }}</li>{% endfor %}</ul>
+    {%- else %}
+    {%- for r in b.rows %}
+    <div class="cv-row">
+      <span class="cv-when">{{ r.when }}</span>
+      <div><div class="cv-what">{{ r.what }}</div>{% if r.details %}<div class="cv-note">{{ r.details }}</div>{% endif %}</div>
+    </div>
+    {%- endfor %}
+    {%- endif %}
+  </div>
+{%- endfor %}
+</div>
+
+{%- assign posts = site.posts -%}
+{%- if posts.size > 0 %}
+<div class="section-sub">
+  <p class="eyebrow">Recent posts</p>
+  {% assign recent = posts | slice: 0, 3 %}{% include post-list.html posts=recent %}
+  {% if posts.size > 3 %}<p><a href="{{ '/blog/' | relative_url }}">All posts →</a></p>{% endif %}
+</div>
+{%- endif %}

@@ -1,0 +1,28 @@
+# Site settings — you rarely need to touch this file.
+title: Ayşe Mine Şimşek
+description: Metallurgical and Materials Engineering student at METU. CV, notes, projects and documents.
+url: https://aysemine.github.io     # change to your own address: https://<github-username>.github.io
+baseurl: ""
+lang: en
+
+# Blog post addresses look like: aysemine.github.io/blog/post-name/
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+timezone: Europe/Istanbul
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Every post uses the "post" layout automatically
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

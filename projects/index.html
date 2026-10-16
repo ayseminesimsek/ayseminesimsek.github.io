@@ -1,0 +1,26 @@
+---
+layout: default
+title: Projects
+section: projects
+---
+{%- assign projects = site.data.projects | where_exp: "x", "x.draft != true" -%}
+<p class="eyebrow">Projects</p>
+<h1 class="h">What I'm working on</h1>
+{%- if projects.size == 0 %}
+<p class="empty">Projects coming soon.</p>
+{%- else %}
+<div class="projects">
+{%- for x in projects %}
+  <article class="project">
+    <span class="year">{{ x.year }}</span>
+    <div><h2 class="h3">{{ x.title }}</h2><p>{{ x.description }}</p></div>
+    <div class="foot"><span class="status">{{ x.status }}</span>
+      {%- if x.url and x.url != "" %}
+      {%- assign ext = x.url | slice: 0, 4 -%}
+      <a href="{% if ext == 'http' %}{{ x.url }}{% else %}{{ x.url | relative_url }}{% endif %}"{% if ext == 'http' %} target="_blank" rel="noopener"{% endif %}>View{% if ext == 'http' %} ↗{% endif %}</a>
+      {%- endif %}
+    </div>
+  </article>
+{%- endfor %}
+</div>
+{%- endif %}

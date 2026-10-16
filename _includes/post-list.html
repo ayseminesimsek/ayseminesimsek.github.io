@@ -1,0 +1,14 @@
+{%- assign list = include.posts -%}
+{%- if list.size == 0 -%}
+<p class="empty">No posts yet. The first one is coming soon.</p>
+{%- else -%}
+<ul class="posts">
+{%- for y in list %}
+  <li><a class="row" href="{{ y.url | relative_url }}">
+    <span class="date">{% include date.html d=y.date %}</span>
+    <div><h3>{{ y.title }}</h3>{% if y.summary %}<p>{{ y.summary }}</p>{% endif %}
+      {% if y.tags.size > 0 %}<div class="tags">{% for t in y.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>{% endif %}</div>
+  </a></li>
+{%- endfor %}
+</ul>
+{%- endif -%}

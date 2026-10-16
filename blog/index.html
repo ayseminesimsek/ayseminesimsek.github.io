@@ -1,0 +1,9 @@
+---
+layout: default
+title: Blog
+section: blog
+description: Posts by Ayşe Mine Şimşek.
+---
+<p class="eyebrow">Blog · {{ site.posts.size }} {% if site.posts.size == 1 %}post{% else %}posts{% endif %}</p>
+<h1 class="h">Writing</h1>
+{% include post-list.html posts=site.posts %}
