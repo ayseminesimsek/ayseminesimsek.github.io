@@ -7,27 +7,27 @@
 @font-face { font-family: "Latin Modern"; src: url("fonts/LM-bold-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
 
 :root {
-  --bg: #fbfbf9;
-  --surface: #ffffff;
-  --fg: #1d2129;
-  --muted: #5b6270;
-  --line: #e2e4e8;
+  --bg: #f6efe0;
+  --surface: #fdf8ee;
+  --fg: #2b2620;
+  --muted: #6b6253;
+  --line: #e3d9c6;
   --accent: #9a3b26;
-  --accent-soft: #f7ece8;
+  --accent-soft: #f1e0d4;
   --font: "Latin Modern", "Latin Modern Roman", "CMU Serif", "Computer Modern", Georgia, serif;
   --font-code: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --radius: 4px;
 }
-/* Dark theme: a soft slate rather than near-black */
+/* Dark theme: a warm dark brown rather than near-black */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #262a32; --surface: #2e333c; --fg: #eceef2; --muted: #b0b7c3;
-    --line: #3d434e; --accent: #eaa491; --accent-soft: #46363a; color-scheme: dark;
+    --bg: #29251f; --surface: #322d26; --fg: #f1ebdf; --muted: #bdb3a2;
+    --line: #463f35; --accent: #eaa491; --accent-soft: #4a3830; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #262a32; --surface: #2e333c; --fg: #eceef2; --muted: #b0b7c3;
-  --line: #3d434e; --accent: #eaa491; --accent-soft: #46363a; color-scheme: dark;
+  --bg: #29251f; --surface: #322d26; --fg: #f1ebdf; --muted: #bdb3a2;
+  --line: #463f35; --accent: #eaa491; --accent-soft: #4a3830; color-scheme: dark;
 }
 :root[data-theme="light"] { color-scheme: light; }
 

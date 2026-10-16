@@ -11,6 +11,23 @@ Personal website of Ayşe Mine Şimşek, built automatically by GitHub Pages (Je
 5. In `_config.yml` change `url:` to `https://<username>.github.io`.
 6. After 1–2 minutes the site is live at `https://<username>.github.io`.
 
+## Editing from the site (no GitHub needed)
+
+Open **`https://<username>.github.io/admin/`**. Everything can be edited there: profile and photo, CV, projects, links, blog posts (with images), PDFs and site settings. Every save becomes a commit, and the site updates 1–2 minutes later.
+
+**First time only:** the page asks for a GitHub token and lets you choose a username and password. The steps for creating the token are shown on the page:
+
+- **Repository access:** only this repository
+- **Permission:** Contents, set to **Read and write**
+
+The token is encrypted with your username and password and saved in `admin/key.json`. After that, the username and password are all you need on any device.
+
+- **Forgot the password or the token expired?** On the login page choose **Token'ı yenile**, paste a new token and set new login details.
+- **Change the password:** go to **Ayarlar → Giriş bilgileri**.
+- **Pick a strong password (10+ characters).** `admin/key.json` sits in a public repository, so the password is what protects the token.
+
+The sections below describe the files directly, which is still possible from GitHub.
+
 ## Where do I change what?
 
 | What | File |

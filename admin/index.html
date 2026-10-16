@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Site düzenleyici</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%239a3b26'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E">
+<script>
+try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="admin.css">
+<script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script defer src="admin.js"></script>
+</head>
+<body>
+<div class="adm">
+  <header class="adm-top">
+    <a href="../">← Siteye dön</a>
+    <span id="who"></span>
+  </header>
+  <div id="app"><p class="muted">Yükleniyor…</p></div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
